@@ -1,0 +1,2 @@
+# smartstop
+MEAN stack application 
