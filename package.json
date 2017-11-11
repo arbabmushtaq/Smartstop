@@ -1,0 +1,23 @@
+{
+  "name": "db",
+  "version": "1.0.0",
+  "description": "testing db",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arbabmushtaq/hello-example.git"
+  },
+  "author": "arbab",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arbabmushtaq/hello-example/issues"
+  },
+  "homepage": "https://github.com/arbabmushtaq/hello-example#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^4.13.1"
+  }
+}
