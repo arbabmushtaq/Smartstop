@@ -1,5 +1,10 @@
 # Smartstop
 
+#### Client Side:
+Entry page,Login form,Signup Form is done so far.
+
+#### Server Side:
+Database and Customer register api done is so far.
 
 ## Getting Started
 
@@ -44,6 +49,7 @@ run your app:
 
 ng serve
 
+run http://localhost:4200/ on your web browser for live application
 
 
 ## Built With
@@ -61,4 +67,3 @@ MongoDb
 
 See the list of [contributors](https://github.com/arbabmushtaq/smartstop/contributors) who participated in this project.
 
-run http://localhost:4200/ on your web browser for live application
