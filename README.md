@@ -54,11 +54,11 @@ run http://localhost:4200/ on your web browser for live application
 
 ## Built With
 
--Angular 4
--Bootstrap 3
--Node 
--Express JS
--MongoDb
+ - Angular 4
+ - Bootstrap 3
+ - Node 
+ - Express JS
+ - MongoDb
 
 
 ## Authors
