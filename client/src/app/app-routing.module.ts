@@ -16,6 +16,12 @@ import { AboutComponent } from './components/about/about.component';
 import { ElectronicsComponent } from './components/electronics/electronics.component';
 import { ClothingComponent } from './components/clothing/clothing.component';
 import { GroceryComponent } from './components/grocery/grocery.component';
+import { ListComponent } from './components/list/list.component';
+import { SvregisterComponent } from './components/svregister/svregister.component';
+import { SvloginComponent } from './components/svlogin/svlogin.component';
+
+
+
 
 
 
@@ -90,6 +96,21 @@ const  myRoutes = RouterModule.forRoot([
     component: GroceryComponent,
     canActivate:[AuthGuard]
   },
+  {
+    path: 'list',
+    component: ListComponent,
+    canActivate:[AuthGuard]
+  },
+  {
+    path: 'svregister',
+    component: SvregisterComponent,
+  },
+  {
+    path: 'svlogin',
+    component: SvloginComponent,
+  }
+  
+  
 
 
 

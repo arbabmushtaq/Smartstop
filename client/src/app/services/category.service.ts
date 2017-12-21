@@ -36,6 +36,17 @@ export class CategoryService {
     this._authService.createAuthenticationHeaders();
     return this._http.get(this.domain+'/category/clothing', this._authService.options).map(res=>res.json());
   }
-
-
+  getListimtiaz(code){
+    this._authService.createAuthenticationHeaders();
+    return this._http.post(this.domain+'/category/list',code, this._authService.options).map(res=>res.json());
+  }
+  
+  getListchase(code){
+    this._authService.createAuthenticationHeaders();
+    return this._http.post(this.domain+'/category/list',code, this._authService.options).map(res=>res.json());
+  }
+  getListchaseup(code){
+    this._authService.createAuthenticationHeaders();
+    return this._http.post(this.domain+'/category/list',code, this._authService.options).map(res=>res.json());
+  }
 }

@@ -4,6 +4,8 @@ import {FormControl, FormGroup, FormBuilder, Validators  } from '@angular/forms'
 import { CustomValidator } from '../../validators/validator'
 //import {applyRedirects} from "@angular/router/src/apply_redirects";
 import  { AuthService } from  '../../services/auth.service';
+import { Router } from  '@angular/router';
+
 import { Http , Headers , RequestOptions } from '@angular/http';
 
 @Component({
@@ -54,7 +56,7 @@ export class RegisterComponent  {
   }
 
 
-  constructor(private _fb: FormBuilder , private  _authService : AuthService) {
+  constructor(private _fb: FormBuilder , private  _authService : AuthService, private _router: Router) {
     this.createRegisterForm();
 
   }
@@ -118,7 +120,8 @@ export class RegisterComponent  {
         this.formEnable();
       }else {
         this.messageClass = 'alert alert-success';
-        this.message = data.message
+        this.message = data.message,
+        this._router.navigate(['/login']);
 
       }
     });

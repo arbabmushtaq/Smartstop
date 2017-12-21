@@ -80,6 +80,7 @@ export class AuthService {
 //getting current profile info
   getProfile(){
     this.createAuthenticationHeaders();
+
     return this._http.get(this.domain + '/authentication/profile' , this.options)
                .map(res=>res.json() );
   }

@@ -23,6 +23,10 @@ import { AboutComponent } from './components/about/about.component';
 import { ElectronicsComponent } from './components/electronics/electronics.component';
 import { ClothingComponent } from './components/clothing/clothing.component';
 import { GroceryComponent } from './components/grocery/grocery.component';
+import { ListComponent } from './components/list/list.component';
+import { SvregisterComponent } from './components/svregister/svregister.component';
+import { SvloginComponent } from './components/svlogin/svlogin.component';
+import {ServauthService} from './services/servauth.service'
 
 
 @NgModule({
@@ -41,7 +45,10 @@ import { GroceryComponent } from './components/grocery/grocery.component';
     AboutComponent,
     ElectronicsComponent,
     ClothingComponent,
-    GroceryComponent
+    GroceryComponent,
+    ListComponent,
+    SvregisterComponent,
+    SvloginComponent
 
   ],
   imports: [
@@ -54,7 +61,7 @@ import { GroceryComponent } from './components/grocery/grocery.component';
     FlashMessagesModule
 
   ],
-  providers: [AuthService ,AuthGuard,NotAuthGuard,CategoryService],
+  providers: [AuthService ,AuthGuard,NotAuthGuard,CategoryService,ServauthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
