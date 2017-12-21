@@ -1,0 +1,57 @@
+<br>
+<br>
+<br>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-12 ">
+
+      <div *ngIf="message && newCategory" class="row " >
+        <div *ngIf="messageClass" >
+          {{message}}
+        </div>
+      </div>
+
+
+      <br>
+      <br>
+
+
+      <!--</div>--> 
+
+      <div class="row">
+
+      <div *ngFor="let category of categories">
+
+        <div class="panel panel-default col-sm-4">
+          <div class="panel-heading">
+            <h3>{{category.name}}</h3>
+          </div>
+          <div class="panel-body">
+              <img src="http://www.texasrevs.com/wp-content/uploads/2016/10/dummy-image.jpg"  height="250px">
+            <p>{{category.price}}</p>
+            <p>{{category.code}}</p>
+            <p>{{category.categ}}</p>
+            <p>{{category.mart}}</p>
+            <p>{{category.description}}</p>
+            
+            <button type="button"  class="btn btn-success" ng-if="disable" (click)="listClick(category.code) ">Add to list</button>
+            <button type="button"  class="btn btn-danger" (click)="listClickRemove(category.code) ">Remove</button>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+ 
