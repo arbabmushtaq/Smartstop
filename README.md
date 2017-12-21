@@ -10,9 +10,11 @@
 * Price List
 
 ## Surveyor Side:
-Database and Customer register api done is so far.
+* Admin can register surveyor
+* Surveyor login
+* Add Product
 
-Getting Started
+## Getting Started
 Clone Git Repository from https://github.com/arbabmushtaq/smartstop
 
 ## Prerequisites
@@ -54,5 +56,5 @@ run http://localhost:4200/ on your web browser for live application
 * Node
 * MongoDb
 
-Authors
-See the list of contributors who participated in this project.
+### Authors
+See the list of [contributors](https://github.com/arbabmushtaq/smartstop/contributors) who participated in this project.
