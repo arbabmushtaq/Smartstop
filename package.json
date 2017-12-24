@@ -1,23 +1,36 @@
 {
-  "name": "db",
+  "name": "smartstop",
   "version": "1.0.0",
-  "description": "testing db",
+  "description": "Mean Stack Application ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arbabmushtaq/hello-example.git"
+    "url": "https://github.com/arbabmushtaq/smartstop"
   },
-  "author": "arbab",
-  "license": "ISC",
+  "keywords": [
+    "Mean"
+  ],
+  "author": "Arbab Ahmed",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/arbabmushtaq/hello-example/issues"
+    "url": "https://github.com/arbabmushtaq/smartstop"
   },
-  "homepage": "https://github.com/arbabmushtaq/hello-example#readme",
+  "homepage": "https://github.com/arbabmushtaq/smartstop",
   "dependencies": {
-    "express": "^4.16.2",
-    "mongoose": "^4.13.1"
+    "async": "^2.5.0",
+    "bcrypt": "^1.0.3",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "es6-denodeify": "^0.1.5",
+    "es6-lib": "^0.1.1",
+    "express": "^4.15.4",
+    "json": "^9.0.6",
+    "jsonwebtoken": "^8.1.0",
+    "mongoose": "^4.11.12",
+    "typescriptkit": "^2.2.0"
   }
 }
