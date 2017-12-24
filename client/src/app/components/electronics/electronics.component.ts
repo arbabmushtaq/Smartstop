@@ -59,7 +59,7 @@ export class ElectronicsComponent implements OnInit {
       code.mart='chase';
       
       this._categoryService.getList(code).subscribe(data=>{
-        if (data.category.length!=0){this.temp.name = data.category[0].name;
+        if (data.category.length=0){this.temp.name = data.category[0].name;
           this.temp.chaseprice = data.category[0].price;}
           else 
           {this.temp.chaseprice='N/A'};
