@@ -34,12 +34,7 @@ export class RegisterComponent  {
     this.form.controls['role'].enable();
     this.form.controls['password'].enable();
     this.form.controls['confirmpass'].enable();
-    /*
-     this.form.get('username').enable();
-     this.form.get('email').enable();
-     this.form.get('role').enable();
-     this.form.get('password').enable();
-     this.form.get('confirmpass').enable();*/
+ 
    }
   formDisable(){
      this.form.controls['username'].disable();
@@ -48,11 +43,7 @@ export class RegisterComponent  {
      this.form.controls['password'].disable();
      this.form.controls['confirmpass'].disable();
 
-    /* this.form.get('username').disable();
-     this.form.get('email').disable();
-     this.form.get('role').disable();
-     this.form.get('password').disable();
-     this.form.get('confirmpass').disable();*/
+   
   }
 
 

@@ -188,7 +188,7 @@ router.get('/checkUsernamesv/:username' , (req, res) =>{
                     if (sv){
                         res.json({success:false , message:'username already taken '});
                     }else {
-                        res.json({success:true , message:'username available '})
+                        res.json({success:true , message:' '})
                     }
                 }
             });
@@ -207,7 +207,7 @@ router.get('/checkUsernamesv/:username' , (req, res) =>{
                     if(sv){
                         res.json({success:false , message:'email already taken '});
                     }else{
-                        res.json({success:true , message:'email available '})
+                        res.json({success:true , message:''})
                     }
                 }
             })
@@ -229,7 +229,7 @@ router.get('/checkUsernamesv/:username' , (req, res) =>{
                     if (user){
                         res.json({success:false , message:'username already taken '});
                     }else {
-                        res.json({success:true , message:'username available '})
+                        res.json({success:true , message:''})
                     }
                 }
             });
@@ -248,7 +248,7 @@ router.get('/checkUsernamesv/:username' , (req, res) =>{
                     if(user){
                         res.json({success:false , message:'email already taken '});
                     }else{
-                        res.json({success:true , message:'email available '})
+                        res.json({success:true , message:''})
                     }
                 }
             })

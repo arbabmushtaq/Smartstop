@@ -1,31 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup , FormControl , FormBuilder ,Validators} from "@angular/forms";
 import { CategoryService} from "../../services/category.service";
-
+import {ProductsComponent} from "../products/products.component";
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-electronics',
   templateUrl: './electronics.component.html',
-  styleUrls: ['./electronics.component.css']
+  styleUrls: ['./electronics.component.css'],
 })
 export class ElectronicsComponent implements OnInit {
 
   categories;
-
   code;
-  
     constructor(
                 private _fb:FormBuilder,
                 private _categoryService:CategoryService,
-               
+                private router:Router, 
+                private location: Location
+                
     ) {
-  
-    }
-  
-    AllCategory(){
-      this._categoryService.getCategory('electronics').subscribe(data=>{
-      //  console.log(data);
+      }
 
-        
+ 
+    AllCategory(){
+      console.log("fetching data with "+this.router.url.split('/')[2]);
+      this._categoryService.getCategory(this.router.url.split('/')[2]).subscribe(data=>{
+        console.log(this.router.url.split('/')[2])
         this.categories = data.category;
       
       })
@@ -33,7 +34,9 @@ export class ElectronicsComponent implements OnInit {
   
     count = localStorage.length-2;
      temp ={}as any;
-    listClick(code){
+    
+    
+     listClick(code){
       
       code  = {
         code:code,
@@ -59,23 +62,25 @@ export class ElectronicsComponent implements OnInit {
       code.mart='chase';
       
       this._categoryService.getList(code).subscribe(data=>{
-        if (data.category.length=0){this.temp.name = data.category[0].name;
-          this.temp.chaseprice = data.category[0].price;}
+        if (data.category.length==0){
+          this.temp.chaseprice='N/A';
+          }
           else 
-          {this.temp.chaseprice='N/A'};
-        
-        
-        
-
+          {
+            this.temp.name = data.category[0].name;
+            this.temp.chaseprice = data.category[0].price;
+          }
   });
 
   code.mart='chaseup';
   
       this._categoryService.getList(code).subscribe(data=>{
-        if (data.category.length!=0){this.temp.name = data.category[0].name;
-          this.temp.chaseupprice = data.category[0].price;}
+        if (data.category.length==0){
+          this.temp.chaseupprice='N/A';
+         }
           else 
-          {this.temp.chaseupprice='N/A'};
+          { this.temp.name = data.category[0].name;
+            this.temp.chaseupprice = data.category[0].price;}
         this.count++;
         console.log(this.temp);
         
@@ -97,31 +102,11 @@ export class ElectronicsComponent implements OnInit {
             
 
 
-    // listClickRemove(code){
-      
-    //   code  = {
-    //     code:code,
-    //     mart:'imtiaz'
-    //   }
-    //   this._categoryService.getList(code).subscribe(data=>{
-    //         console.log(data);
-    //         var temp1 = JSON.stringify(data);
-    //         for (var i=1;i<=localStorage.length-2;i++){
-    //           var temp =localStorage.getItem("item"+i);
-    //           console.log(temp+"and "+temp1);
-    //           if (temp1== temp)
-    //             {console.log('match');
-    //               localStorage.removeItem("item"+i);
-    //               localStorage.removeItem("item"+i+1);
-    //               localStorage.removeItem("item"+i+2);}
-    //         }
-
-    //   });
-    // }
-  
-  
-  
+                navigateBack() {
+                  this.location.back();
+                }
     ngOnInit() {
+      
       this.AllCategory();
     }
 

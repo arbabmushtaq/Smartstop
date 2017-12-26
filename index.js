@@ -38,6 +38,7 @@ app.use(bodyParser.json());
 
 //middleware static directory for frontend
 app.use(express.static(__dirname+'/client/dist/'));
+app.use('/category/:categoryname' , category );
 app.use('/category' , category );
 //app.use('/svauthentication' , svauthentication );
 //our custom authentication middleware ,API

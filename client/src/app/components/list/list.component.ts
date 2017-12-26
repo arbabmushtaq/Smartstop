@@ -10,10 +10,10 @@ import { CategoryService} from "../../services/category.service"
 })
 export class ListComponent implements OnInit {
    
- 
-//    names=[];
-//    prices=[];
-
+ categories;
+ imtiaztotal;
+ chasetotal;
+ chaseuptotal;
    show(){
     
     var data=[] ;
@@ -39,31 +39,34 @@ export class ListComponent implements OnInit {
       j++;
       
     });
+    
+    this.imtiaztotal=imtiaztotal;
+    this.chasetotal=chasetotal;
+    this.chaseuptotal=chaseuptotal;
     console.log(imtiaztotal + " " +chasetotal + "  "+ chaseuptotal);
     console.log(data);
-    var table, row, cell;
+    this.categories=data;
+    // var table, row, cell;
   
-    table = document.getElementById('table');
+    // table = document.getElementById('table');
   
-    for (var i = 0; i < data.length; i++) {
-      // insert a new row at the end of the table
-      row = table.insertRow(-1);
+    // for (var i = 0; i < data.length; i++) {
+    //   row = table.insertRow(-1);
   
-      for (var prop in data[i]) {
-        cell = row.insertCell();
-        cell.innerText = data[i][prop];
-      }
-    }
-    var total = ["Total",imtiaztotal,chasetotal,chaseuptotal];
-    row=table.insertRow(-1);
+    //   for (var prop in data[i]) {
+    //     cell = row.insertCell();
+    //     cell.innerText = data[i][prop];
+    //   }
+    // }
+    // var total = ["Total",imtiaztotal,chasetotal,chaseuptotal];
+    // row=table.insertRow(-1);
 
-        for (var l=0;l<4;l++) {
-          cell = row.insertCell();
-          cell.innerText = total[l];}
+    //     for (var l=0;l<4;l++) {
+    //       cell = row.insertCell();
+    //       cell.innerText = total[l];}
 
  }
 
-  categories;
   
     code;
     

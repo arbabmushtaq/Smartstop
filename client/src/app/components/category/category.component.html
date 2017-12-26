@@ -4,6 +4,29 @@
 
 <div class="container">
 
+     <!-- Modal -->
+     <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-sm">
+
+        <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+              
+            </div>
+      <div class="modal-body">
+          <h4 class="modal-title">Product Added</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)= "reload()" >Add Another Product</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
   <div class="row">
     <div class="col-md-12 ">
 
@@ -17,29 +40,6 @@
       <br>
       <br>
 
-      <!--<div  *ngIf="!newCategory">-->
-
-
-        <!--<table class="table" >-->
-          <!--<thead class="thead-light">-->
-          <!--<tr>-->
-            <!--<th scope="col">#</th>-->
-            <!--<th scope="col">Category</th>-->
-
-          <!--</tr>-->
-          <!--</thead>-->
-          <!--<tbody *ngFor="let category of categories ; let i = index">-->
-          <!--<tr >-->
-            <!--<th >{{i+1}} </th>-->
-            <!--<td>{{category.name}}</td>-->
-          <!--</tr>-->
-          <!--</tbody>-->
-        <!--</table>-->
-
-
-
-      <!--</div>-->
-
 
 
       <form [formGroup]="form"    (submit)="addCategoryFormSubmit()"  class="form-group">
@@ -52,17 +52,16 @@
           
           <label for="code" >Product Code</label>
           <input formControlName="code" type="text" name="code" id="code"class="form-control" placeholder="e.g.123456">
-
-          <!-- <label for="mart" >mart</label>
-          <input formControlName="mart" type="text" name="mart" id="mart"class="form-control" placeholder="category name"> -->
-
-          <label for="categ" >Category</label>
-          <select id="categ" class="form-control" name="categ" formControlName="categ">
-                          <option value="electronics">Electronics</option>
-                          <option value="clothing">Clorhing</option>
-                          <option value="grocery">Grocery</option>
+          
+          <label for="categ" >Available Categories</label>
+          <select id="categ" class="form-control" name="categ" formControlName="categ" [(ngModel)]="value" >
+                          <option *ngFor=' let category of categories' value={{category}} >{{category}}</option>
            </select>
-
+          
+           <div >
+           <label for="newcat">Product Category</label>
+           <input type="text" formControlName="newcat" name="newcat" id="newcat"  class="form-control" placeholder="electronics" [(ngModel)]="value">
+          </div>
           <label for="mart" >Mart</label>
           <select id="mart" class="form-control" name="mart" formControlName="mart">
             
@@ -87,17 +86,10 @@
         <br>
         
 
-        <button  type="submit" class="btn btn-success"   >Add</button>
+        <button  type="submit" class="btn btn-success"   data-toggle="modal" data-target="#myModal" >Add</button>
 
         
       </form>
-
-
-     
-
-
-
-
 
 
     </div>

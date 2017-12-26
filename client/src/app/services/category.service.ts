@@ -5,7 +5,7 @@ import { AuthService} from "./auth.service";
 
 @Injectable()
 export class CategoryService {
-
+  curcat;
   domain = 'http://localhost:1212'
 
   constructor(private _http:Http,
@@ -20,6 +20,7 @@ export class CategoryService {
   getAllCategory(){
     this._authService.createAuthenticationHeaders();
     return this._http.get(this.domain+'/category/allCategory', this._authService.options).map(res=>res.json());
+    
   }
 
 
@@ -27,34 +28,9 @@ export class CategoryService {
     this._authService.createAuthenticationHeaders();
     return this._http.get(this.domain+'/category/'+cat, this._authService.options).map(res=>res.json());
   }
-  // getElectronicCategory(){
-  //   this._authService.createAuthenticationHeaders();
-  //   return this._http.get(this.domain+'/category/electronics', this._authService.options).map(res=>res.json());
-  // }
 
-  // getGroceryCategory(){
-  //   this._authService.createAuthenticationHeaders();
-  //   return this._http.get(this.domain+'/category/grocery', this._authService.options).map(res=>res.json());
-  // }
-  // getClothingCategory(){
-  //   this._authService.createAuthenticationHeaders();
-  //   return this._http.get(this.domain+'/category/clothing', this._authService.options).map(res=>res.json());
-  // }
   getList(code){
     this._authService.createAuthenticationHeaders();
     return this._http.post(this.domain+'/category/list',code, this._authService.options).map(res=>res.json());
   }
-  // getListimtiaz(code){
-  //   this._authService.createAuthenticationHeaders();
-  //   return this._http.post(this.domain+'/category/list',code, this._authService.options).map(res=>res.json());
-  // }
-  
-  // getListchase(code){
-  //   this._authService.createAuthenticationHeaders();
-  //   return this._http.post(this.domain+'/category/list',code, this._authService.options).map(res=>res.json());
-  // }
-  // getListchaseup(code){
-  //   this._authService.createAuthenticationHeaders();
-  //   return this._http.post(this.domain+'/category/list',code, this._authService.options).map(res=>res.json());
-  // }
 }

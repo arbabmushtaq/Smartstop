@@ -1,40 +1,78 @@
 <br>
-<h3 class="text-center"> <u> Categories </u> </h3>
 <br>
 <br>
 <div  class="container">
+        <h2 >  CATEGORIES </h2>
+        
 
-        <div class="row">
+
+    
+                <div class="row">
+                                <div class="center">
+                                                <div id="slider-k">
+                                                    <div class="frame-k">
+                                                      <a routerLink="/products/electronics">  <img src="http://localupdates.in/wp-content/uploads/2017/09/electronics.jpg" alt="" /> </a>
+                                                    </div>
+                                                    <div class="frame-k">
+                                                       <a routerLink="/products/grocery">  <img src="http://www.superkirana.in/images/groceryslide3.jpg" alt="" /> </a> 
+                                                    </div>
+                                                    <div class="frame-k">
+                                                       <a routerLink="/products/clothing">  <img src="https://www.taxrates.com/wp-content/uploads/2014/01/clothing.jpg" alt="" /> </a> 
+                                                    </div>
+                                                    <div class="frame-k">
+                                                            <a routerLink="/products/electronics">  <img src="http://localupdates.in/wp-content/uploads/2017/09/electronics.jpg" alt="" /> </a>
+                                                    </div>
+                                                    <div class="frame-k">
+                                                            <a routerLink="/products/grocery">  <img src="http://www.superkirana.in/images/groceryslide3.jpg" alt="" /> </a> 
+                                                         </div>
+                                                
+                                                </div>
+                
+                                </div>
+                
+                        </div>
+
+
+
+
+        <!-- <div class="row">
+                
+                <div *ngFor="let category of categories"> 
                 <div class="panel panel-default col-sm-4">    
                         <div class="panel-heading">
-                                <h4 class="text-center"> <a routerLink="/products/electronics"  >Electronics</a></h4>  
+                                <h4 class="text-center"> <a  [routerLink]="['/products', category]"  >{{category}}</a></h4>  
                           </div>
 
-                          <a routerLink="/products/electronics"  > <img src="https://bazaarlocator.com/uploads/upload_1018910268.jpeg" class="img-responsive"style="width:300px " style="height:250px" alt="Image"> </a>
+                          <a [routerLink]="['/products', category]"> <img src="https://bazaarlocator.com/uploads/upload_1018910268.jpeg" class="img-responsive"style="width:300px " style="height:250px" alt="Image"> </a>
                         
-                </div>
-                
-                <div class="panel panel-default col-sm-4">
-                        
-                        
-                        <div class="panel-heading">
-                              <h4 class="text-center"> <a routerLink="/products/grocery"  >Grocery</a></h4>  
-                        </div>
-                        <a routerLink="/products/grocery"  > <img src="https://i.pinimg.com/736x/02/4c/14/024c144bf1736084fd757e98b69ef1d3--grocery-items-grocery-store.jpg"  class = "img-responsive" style="width:300px " style="height:250px"  > </a>
-                        
-                </div>
-                
-                <div class="panel panel-default col-sm-4">
-                        
-                        
-                        <div class="panel-heading">
-                                <h4 class="text-center"> <a routerLink="/products/clothing"  >Clothing</a></h4>  
-                          </div>
-                          <a routerLink="/products/clothing"  > <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?dpr=1&auto=format&fit=crop&w=376&h=251&q=60&cs=tinysrgb&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" style="width:300px " style="height:250px"></a>
-                        
-                </div>
+                </div></div>
         
-        </div>
+        </div> -->
+        <br>
+        <br>
+        <br>
+        <div *ngFor="let category of categories"> 
+        <div class="item  col-xs-4 col-lg-4">
+                <div  class="thumbnail">
+                  <a [routerLink]="['/products', category]">  <img class="group list-group-image" src="https://bazaarlocator.com/uploads/upload_1018910268.jpeg" alt="" /></a>
+                    <div class="caption">
+                        <h4 class="group inner list-group-item-heading">
+                            {{category}}</h4>
+                        <!-- <p class="group inner list-group-item-text">
+                            country of orgin : Taiwan<br>Brands : FCS,CH(SM)<br>Capacity : 60ton - 400ton<br>Shot Weight : 50g - 200g</p> -->
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <p class="lead">
+                                    </p>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <a class="btn btn-success" [routerLink]="['/products', category]">See Products</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
 </div>
 
 

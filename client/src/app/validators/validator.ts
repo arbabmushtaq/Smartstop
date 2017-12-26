@@ -62,18 +62,6 @@ export class  CustomValidator{
     }
   }
 
- /* formEnable(form){
-    this.form.get('username').enable();
-    this.form.get('email').enable();
-    this.form.get('password').enable();
-    this.form.get('confirmpass').enable();
-  }
-  formDisable(){
-    this.form.get('username').disable();
-    this.form.get('email').disable();
-    this.form.get('password').disable();
-    this.form.get('confirmpass').disable();
-  }*/
 
 
 

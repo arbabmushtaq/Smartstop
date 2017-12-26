@@ -1,64 +1,48 @@
-<!-- <br>
-<div id="result"></div>
-
-
-<div class="container">
-    <div class="row"> 
-        <div class="col-md-3"*ngFor="let a of x">
-            <p>Name</p>
-            
-        </div>
-        <div class="col-md-3">
-                <p>Imtiaz</p> 
-                
-        </div>
-        <div class="col-md-3">
-                <p>Chase Up</p>    
-        </div>
-        <div class="col-md-3">
-                <p>Chase</p>         
-        </div>
-    </div>
-</div>
-
-<div class="container">
-        <h2>Price Table </h2>
+<div class="background">
+    <div class="container">
+      <div class="panel pricing-table">
         
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Imtiaz</th>
-              <th>Chase</th>
-              <th>Chaseup</th>
-            </tr>
-          </thead>
-          
-
-          <tbody >
+        <div class="pricing-plan">
+          <img src="../assets/st.jpg" alt="" class="pricing-img">
+          <h2 class="pricing-header">Products</h2>
+          <ul class="pricing-features">
+            <li class="pricing-features-item" *ngFor='let category of categories'>{{category.name}}</li>
             
-                    <tr id="myTr">
-                            
-                            <div id='child'></div>
-                            </tr>
-              
-
-            <br>
-          </tbody>
-        </table>
-      </div> -->
-      <div>
-          <table id="table" class="table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Imtiaz</th>
-                <th>Chase</th>
-                <th>Chaseup</th>
-                
-              </tr>
-            </thead>
-            <tbody>
-            </tbody>
-          </table>
+          </ul>
+          <span class="pricing-price">Total</span>
+         
         </div>
+        <div class="pricing-plan">
+            <img src="../assets/imtiaz.jpg" alt="" class="pricing-img">
+            <h2 class="pricing-header">Imtiaz</h2>
+            <ul class="pricing-features">
+              <li class="pricing-features-item" *ngFor='let category of categories'>Rs.{{category.imtiazprice}}</li>
+            </ul>
+            <span class="pricing-price">Rs. {{imtiaztotal}}</span>
+            
+          </div>
+          
+        <div class="pricing-plan">
+          <img src="../assets/chase.png" alt="" class="pricing-img">
+          <h2 class="pricing-header">Chase</h2>
+          <ul class="pricing-features">
+              <li class="pricing-features-item" *ngFor='let category of categories'>Rs. {{category.chaseprice}}</li>
+            
+          </ul>
+          <span class="pricing-price">Rs. {{chasetotal}}</span>
+          
+        </div>
+        
+        <div class="pricing-plan">
+          <img src="../assets/chase-up.png" alt="" class="pricing-img">
+          <h2 class="pricing-header">Chaseup</h2>
+          <ul class="pricing-features">
+              <li class="pricing-features-item" *ngFor='let category of categories'>Rs.{{category.chaseupprice}}</li>
+          </ul>
+          <span class="pricing-price">Rs.{{chaseuptotal}}</span>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>

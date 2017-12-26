@@ -35,7 +35,7 @@ module.exports = (router) => {
 
     router.get('/allCategory' ,(req, res)=>{
 
-        Category.find({} ,(err , category)=>{
+        Category.find({},{_id:0, categ: 1 } ,(err , category)=>{
             if(err){
                 console.log('Error '+err);
             }else {
@@ -48,53 +48,24 @@ module.exports = (router) => {
         }).sort({_id:-1})
     });
 
-    router.get('/electronics' ,(req, res)=>{
-        
-                Category.find({categ:'electronics'} ,(err , category)=>{
+    
+			router.get('/:categoryname' ,(req, res)=>{
+				var queryBy = req.params.categoryname;
+                Category.find({categ:queryBy} ,(err , category)=>{
                     if(err){
                         console.log('Error '+err);
                     }else {
                         if(!category){
                             res.status(400).json({success:false , message:'Not Found'});
                         }else {
+                        	
                             res.status(200).json({success:true , category:category});
                         }
                     }
                 }).sort({_id:-1})
             });
 
-
-    router.get('/grocery' ,(req, res)=>{
-                
-                 Category.find({categ:'grocery'} ,(err , category)=>{
-                            if(err){
-                                console.log('Error '+err);
-                            }else {
-                                if(!category){
-                                    res.status(400).json({success:false , message:'Not Found'});
-                                }else {
-                                    res.status(200).json({success:true , category:category});
-                                }
-                            }
-                        }).sort({_id:-1})
-                    });
-
-     router.get('/clothing' ,(req, res)=>{
-                        
-                         Category.find({categ:'clothing'} ,(err , category)=>{
-                                    if(err){
-                                        console.log('Error '+err);
-                                    }else {
-                                        if(!category){
-                                            res.status(400).json({success:false , message:'Not Found'});
-                                        }else {
-                                            res.status(200).json({success:true , category:category});
-                                        }
-                                    }
-                                }).sort({_id:-1})
-                            });
-        
-
+    
     router.post('/list' ,(req, res)=>{
                                 
                                  Category.find({code:req.body.code ,mart:req.body.mart}, {_id:0, name: 1, price: 1 } ,(err , category)=>{

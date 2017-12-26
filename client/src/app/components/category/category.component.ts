@@ -13,9 +13,7 @@ export class CategoryComponent implements OnInit {
 
 
 
-  //form:FormGroup;
   categories;
-
   constructor(
               private _fb:FormBuilder,
               private _categoryService:CategoryService
@@ -24,7 +22,7 @@ export class CategoryComponent implements OnInit {
   }
 
 
-  // form =this._fb.group({
+  
     
     form =this._fb.group({
       category:['' , Validators.compose([
@@ -46,7 +44,9 @@ export class CategoryComponent implements OnInit {
       description:['' , Validators.compose([
         Validators.required
       ])],
-
+      newcat:['' , Validators.compose([
+        Validators.required
+      ])]
     })
 
 
@@ -60,11 +60,10 @@ export class CategoryComponent implements OnInit {
         name:this.form.get('category').value,
         price:this.form.get('price').value,
         code:this.form.get('code').value,
-        categ:this.form.get('categ').value,
+        categ:this.form.get('newcat').value,
         mart:this.form.get('mart').value,
         description:this.form.get('description').value,
       }
-
 
 
       this._categoryService.addProduct(product).subscribe(data=>{
@@ -80,11 +79,32 @@ export class CategoryComponent implements OnInit {
   AllCategory(){
     this._categoryService.getAllCategory().subscribe(data=>{
       console.log(data);
-      this.categories = data.category;
+var set1 = new Set();
+for (let i of data.category)
+{console.log("in loop")
+set1.add(i.categ);
+}
+var j=0;
+var arr=[];
+set1.forEach(function(value) {
+arr[j]=value;
+j++;
+});
+console.log(arr)
+    this.categories=arr;
+    if (this.categories.length==0)
+    this.categories=['electronics'];
+    
+    console.log(this.categories)
     })
+    
   }
 
-
+  reload()
+  {
+    location.reload();
+    
+  }
 
 
 
